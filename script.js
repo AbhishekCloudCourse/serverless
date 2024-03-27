@@ -5,11 +5,18 @@ exports.consumeUserMessage = (message, context) => {
     const pubSubMessage = message.data
       ? JSON.parse(Buffer.from(message.data, 'base64').toString())
       : null;
+
+      const pool = new Pool({
+        user: process.env.DB_USER,
+        host: process.env.DB_HOST,
+        database: process.env.DB_NAME,
+        password: process.env.DB_PASSWORD
+      });
   require('dotenv').config();
   const sgMail = require('@sendgrid/mail');
   sgMail.setApiKey(process.env.SENDGRID_API_KEY);
   console.log(process.env.SENDGRID_API_KEY);
-  
+  console.log(process.env.DB_PASSWORD);
   const functions = require('@google-cloud/functions-framework');
   
     // The Pub/Sub message is passed as the CloudEvent's data payload.

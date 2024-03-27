@@ -1,4 +1,4 @@
-# Project Title
+# Serverless 
 
 This is a Node.js project that consumes user messages and sends verification emails using SendGrid and Google Cloud Functions.
 
