@@ -22,7 +22,7 @@ exports.consumeUserMessage = (message, context) => {
       to: pubSubMessage.username,
       from: 'abhishekunnithan@gmail.com', // Use the email address or domain you verified above
       subject: 'Verify your email',
-      html: `<strong>Click the below link</strong><br><a href="http://abhishekforce.me:8000/verify/${uuid}">Click here</a>`,
+      html: `<strong>Click the below link</strong><br><a href="https://abhishekforce.me:443/verify/${uuid}">Click here</a>`,
     };
     //ES6
     sgMail
